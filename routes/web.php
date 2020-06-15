@@ -1,10 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
 
-Route::get('/about', function () {
-    $nama = "Fuad Muhammad Nur";
-    return view('about', ['nama' => $nama]);
-});
+Route::get('/mahasiswa', 'MahasiswaController@index');
