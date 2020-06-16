@@ -16,7 +16,11 @@
           <p class="card-text">{{ $student->jurusan }}</p>
 
           <button type="submit" class="btn btn-primary">Edit</button>
-          <button type="submit" class="btn btn-danger">Delete</button>
+          <form action="{{ $student->id }}" method="POST" class="display d-inline" onclick="return confirm('Yakin ingin menghapus data {{ $student->nama }} ?')">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
           <a href="/students" class="card-link">Kembali</a>
         </div>
       </div>

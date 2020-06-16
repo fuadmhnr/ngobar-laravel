@@ -12,7 +12,7 @@
         @csrf
         <div class="form-group">
           <label for="nama">Nama</label>
-          <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" placeholder="Insert your name" name="nama">
+          <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" placeholder="Insert your name" name="nama" value="{{ old('nama') }}">
           @error('nama')
           <div class="invalid-feedback">
             {{ $message }}
@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
           <label for="nim">NIM</label>
-          <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" placeholder="Insert your NIM" name="nim">
+          <input type="text" class="form-control @error('nim') is-invalid @enderror" id="nim" placeholder="Insert your NIM" name="nim" value="{{ old('nim') }}">
           @error('nim')
           <div class="invalid-feedback">
             {{ $message }}
@@ -30,11 +30,11 @@
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" placeholder="Insert your email" name="email">
+          <input type="text" class="form-control" id="email" placeholder="Insert your email" name="email" value="{{ old('email') }}">
         </div>
         <div class="form-group">
           <label for="jurusan">Jurusan</label>
-          <input type="text" class="form-control" id="jurusan" placeholder="Insert your jurusan" name="jurusan">
+          <input type="text" class="form-control" id="jurusan" placeholder="Insert your jurusan" name="jurusan" value="{{ old('email') }}">
         </div>
         <button type="submit" class="btn btn-primary">Tambah Data</button>
       </form>

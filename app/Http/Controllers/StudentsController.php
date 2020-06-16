@@ -46,7 +46,7 @@ class StudentsController extends Controller
 
         $request->validate([
             'nama' => 'required',
-            'nama' => 'required|size:8',
+            'nim' => 'required|size:8',
         ]);
 
         Student::create($request->all());
@@ -95,6 +95,7 @@ class StudentsController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        Student::destroy($student->id);
+        return redirect('/students')->with('status', "Student Data Deleted!");
     }
 }
